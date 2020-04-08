@@ -1,14 +1,25 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 export class Form extends Component {
-    render() {
-        return (
-           <form action="">
-                <input type="text" placeholder="Github username"/>
-                <button>Add Card</button>
-           </form>
-        )
-    }
+    state = { userName: ''}
+  handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(this.state.userName)
+  };
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <input
+          type="text"
+          placeholder="Github username"
+          value={this.state.userName}
+          onChange={(e) => this.setState({ userName: e.target.value}) }
+          required
+        />
+        <button>Add Card</button>
+      </form>
+    );
+  }
 }
 
-export default Form
+export default Form;
