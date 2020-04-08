@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import logo from './logo.svg';
+import CardList from './components/CardList';
 import './App.scss';
 
 
@@ -7,9 +7,10 @@ import './App.scss';
 export class App extends Component {
   render() {
     return (
-      <div className="App">
-        {this.props.title}
-      </div>
+      <>
+      <div className="header">{this.props.title}</div>
+      <CardList />
+      </>
     )
   }
 }
